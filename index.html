@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="ICSE Class 10 Percentage Calculator – Calculate your board exam percentage easily and accurately.">
+  <meta name="keywords" content="ICSE, Class 10, Percentage Calculator, Board Exam, Marks, ThrillyVerse">
+  <meta name="author" content="YourName">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICSE Percentage Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <div class="top-header">
+      <div class="logo">ThrillyVerse</div>
+      <div class="hamburger" id="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </div>
+    <nav id="nav-menu" class="nav-menu">
+      <ul>
+        <li><a href="https://dearestwall.github.io/ThrillyVerse/home.html">Home</a></li>
+        <li><a href="https://dearestwall.github.io/ThrillyVerse/material.html">Material</a></li>
+        <li><a href="https://dearestwall.github.io/ThrillyVerse/news.html">News</a></li>
+      </ul>
+    </nav>
+    <div class="calc-heading">
+      <h2>ICSE Percentage Calculator</h2>
+      <p>Enter the total marks (max 100) for each component. For composite subjects, the average is calculated automatically.</p>
+    </div>
+  </header>
+  <main>
+    <form id="marksForm">
+      <table>
+        <thead>
+          <tr>
+            <th>Subject Component</th>
+            <th>Marks (max 100)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- English: Two inputs -->
+          <tr>
+            <td>English Language</td>
+            <td><input type="number" id="engLang" min="0" max="100" placeholder="e.g. 85" required></td>
+          </tr>
+          <tr>
+            <td>English Literature</td>
+            <td><input type="number" id="engLit" min="0" max="100" placeholder="e.g. 90" required></td>
+          </tr>
+          <!-- Science: Three inputs -->
+          <tr>
+            <td>Physics</td>
+            <td><input type="number" id="physics" min="0" max="100" placeholder="e.g. 80" required></td>
+          </tr>
+          <tr>
+            <td>Chemistry</td>
+            <td><input type="number" id="chemistry" min="0" max="100" placeholder="e.g. 85" required></td>
+          </tr>
+          <tr>
+            <td>Biology</td>
+            <td><input type="number" id="biology" min="0" max="100" placeholder="e.g. 90" required></td>
+          </tr>
+          <!-- Social Science: Two inputs -->
+          <tr>
+            <td>History &amp; Civics</td>
+            <td><input type="number" id="history" min="0" max="100" placeholder="e.g. 75" required></td>
+          </tr>
+          <tr>
+            <td>Geography</td>
+            <td><input type="number" id="geography" min="0" max="100" placeholder="e.g. 80" required></td>
+          </tr>
+          <!-- Single-input subjects -->
+          <tr>
+            <td>Mathematics</td>
+            <td><input type="number" id="math" min="0" max="100" placeholder="e.g. 88" required></td>
+          </tr>
+          <tr>
+            <td>Optional Subject</td>
+            <td><input type="number" id="optional" min="0" max="100" placeholder="e.g. 80" required></td>
+          </tr>
+          <tr>
+            <td>Second Language</td>
+            <td><input type="number" id="secondLang" min="0" max="100" placeholder="e.g. 78" required></td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="errorMessage" class="error-message"></div>
+      <button type="submit" id="calculateBtn">Calculate Percentage</button>
+    </form>
+  </main>
+
+  <!-- Modal for result -->
+  <div id="resultModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h2 class="modal-heading">Calculation Result</h2>
+      <p id="overallResult" class="modal-overall"></p>
+      <table id="resultTable">
+        <thead>
+          <tr>
+            <th class="modal-table-heading">Subject</th>
+            <th class="modal-table-heading">Percentage</th>
+            <th class="modal-table-heading">Grade</th>
+          </tr>
+        </thead>
+        <tbody id="resultBody">
+          <!-- Dynamic rows inserted here -->
+        </tbody>
+      </table>
+      <h3 class="modal-heading">Calculation Method:</h3>
+      <ul id="calcMethod">
+        <li>English = Average of English Language and English Literature.</li>
+        <li>Science = Average of Physics, Chemistry, and Biology.</li>
+        <li>Social Science = Average of History &amp; Civics and Geography.</li>
+        <li>Between Mathematics and Science, only the higher score is considered.</li>
+        <li>Overall Percentage = Average of the 5 subjects: English, (Math or Science), Social Science, Optional Subject, and Second Language.</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 ThrillyVerse. All rights reserved.</p>
+  </footer>
+</body>
+</html>
